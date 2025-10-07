@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let menuItems = [
+        //     {id:1, name:"coffee", price: 3.50},
+        //     {id:2, name: "sandwich", price: 12.50}
+        // ]
+        // menuItems.push({id:3, name:"ice cream", price: 6.30})
+
+        // console.log("updated menu items:", menuItems)
+
+        localStorage.setItem('userName', 'Alice');
+        localStorage.setItem('userAge', '19');
+        localStorage.setItem('isLoggedIn', 'true');
+
+        let name = localStorage.getItem('userName');
+        let age = localStorage.getItem('userAge');
+        let loggedIn = localStorage.getItem('isLoggedIn');
+
+        console.log("Retrieved data:");
+        console.log("Name:", name);     // "Alice"
+        console.log("Age:", age);       // "25" (note: always returns string)
+        console.log("Logged in:", loggedIn); // "true"
+
+        if (localStorage.getItem('userName') !== null) {
+            console.log("User name is saved");
+        } else {
+            console.log("No user name saved");
+        }
+
+        localStorage.removeItem('userName')
+        localStorage.removeItem('userAge')
+        localStorage.removeItem('isLoggedIn')
+
+
+
+        localStorage.setItem('userNames', 'Mary');
+        localStorage.setItem('userAges', '22');
+        localStorage.setItem('isLoggedIn', 'true');
+
+
+        let names = localStorage.getItem('userNames')
+
+        console.log("name:", names)
+
+        let price = 15.99;
+        localStorage.setItem('price', price.toString());
+
+        let savedPrice = localStorage.getItem('price')
+        if (savedPrice !== null) {
+            savedPrice = Number(savedPrice);
+            console.log("price:", savedPrice, typeof savedPrice);
+        }
+
+        let isActive = true;
+        localStorage.setItem('isActive', isActive.toString());
+
+        let savedIsActive = localStorage.getItem('isActive');
+        if (savedIsActive !== null) {
+            savedIsActive = savedIsActive === 'true';
+        }
+
+        function saveNumber(key, value) {
+            localStorage.setItem(key, value) {
+            localStorage.setItem(key, value.toString());
+            }
+        }
+
+        function loadNumber(key, defaultValue = 0) {
+            let saved 
+
+        }
+
+    </script>
+</body>
+
+</html>

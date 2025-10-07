@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let favoriteColors = ["blue", "green", "red"];
+        console.log("Original array:", favoriteColors);
+
+        localStorage.setItem('Colors', JSON.stringify(favoriteColors));
+
+        let savedColors = localStorage.getItem('Colors');
+        if (savedColors !== null) {
+            savedColors = JSON.parse(savedColors);
+            console.log("Loaded array:", savedColors)
+            console.log("First color:", savedColors[0]);
+        }
+
+        console.log("");
+
+        let userProfile = {
+            name: "John Doe",
+            age: 30,
+            email: "john@exxample.com",
+            preferences: {
+                theme: "dark",
+                notifications: true
+            }
+        };
+
+        console.log("User profile:", userProfile);
+
+        localStorage.setItem('profile', JSON.stringify(userProfile));
+
+        let loadedProfile = localStorage.getItem('profile')
+        if (loadedProfile !== null) {
+            loadedProfile = JSON.parse(loadedProfile);
+            console.log("loaded profile:", loadedProfile);
+            console.log("User name:", loadedProfile.name);
+            console.log("Theme preference:", loadedProfile.preferences.theme);
+        }
+
+        console.log("");
+
+        let menuItems = [
+            {id: 1, name: "coffe", price: 3.50, cateory: "Drinks"},
+            {id: 2, name: "sandwich", price: 8.00, cateory: "food"},
+            {id:3, name:"cookie", price:2.25, cateory: "dessert"}
+        ];
+
+        localStorage.setItem('Menu items', JSON.stringify(menuItems));
+
+        let loadedMenuItems = localStorage.getItem(menuItems);
+        if (loadedMenuItems !== null) {
+
+        }
+        
+    </script>
+</body>
+</html>
